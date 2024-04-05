@@ -23,7 +23,9 @@ function Count({ updateCountPar }) {
       const response = await axios.get(
         "https://dataneuron-backend-mlfa.onrender.com/api/v1/user/get"
       ); // Adjust the URL based on your setup
+      console.log(response);
       const data = await response.json();
+      console.log(data);
       setUsers(data);
     };
 
