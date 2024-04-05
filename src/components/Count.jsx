@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-function Count({ updateCount1 }) {
+function Count({ updateCountPar }) {
   const [addCount, setAddCount] = useState(0);
   const [updateCount, setUpdateCount] = useState(0);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     // Fetch the count of 'add' API calls
@@ -17,7 +18,17 @@ function Count({ updateCount1 }) {
       .get("https://dataneuron-backend-mlfa.onrender.com/update/count")
       .then((response) => setUpdateCount(response.data.count))
       .catch((error) => console.error("Error fetching update count:", error));
-  }, [updateCount1]);
+
+    const fetchUsers = async () => {
+      const response = await axios.get(
+        "https://dataneuron-backend-mlfa.onrender.com/api/v1/user/get"
+      ); // Adjust the URL based on your setup
+      const data = await response.json();
+      setUsers(data);
+    };
+
+    fetchUsers();
+  }, [updateCountPar]);
 
   return (
     <div>
@@ -26,6 +37,23 @@ function Count({ updateCount1 }) {
         <p>Add Count: {addCount}</p>
         <p>Update Count: {updateCount}</p>
       </div>
+
+      <table className="table table-striped table-hover">
+        <thead className="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user._id}>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

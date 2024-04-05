@@ -7,11 +7,11 @@ import Update from "./Update";
 
 function ResizeCom() {
   // State to track the count of updates
-  const [updateCount1, setUpdateCount1] = useState(0);
+  const [updateCountPar, setUpdateCountPar] = useState(0);
 
   // Function to increment the count of updates
   const incrementUpdateCount = () => {
-    setUpdateCount1(updateCount1 + 1);
+    setUpdateCountPar(updateCountPar + 1);
   };
   return (
     <>
@@ -74,7 +74,7 @@ function ResizeCom() {
                 <PanelResizeHandle />
                 <Panel className="panel" style={{ overflow: "auto" }}>
                   {/* Show count of add and update */}
-                  <Count updateCount1={updateCount1} />
+                  <Count updateCountPar={updateCountPar} />
                 </Panel>
                 <PanelResizeHandle />
                 <Panel defaultSize={0}></Panel>
