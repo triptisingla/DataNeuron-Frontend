@@ -12,8 +12,8 @@ function Update({ incrementUpdateCount }) {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const {data} = await axios.put(
-        "http://localhost:8000/api/v1/user/update",
+      const { data } = await axios.put(
+        "https://dataneuronf.netlify.app/api/v1/user/update",
         { name: nameUpdate, email: emailUpdate, password: passwordUpdate },
         {
           headers: {

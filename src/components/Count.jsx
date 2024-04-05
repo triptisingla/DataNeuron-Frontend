@@ -8,13 +8,13 @@ function Count({ updateCount1 }) {
   useEffect(() => {
     // Fetch the count of 'add' API calls
     axios
-      .get("http://localhost:8000/add/count")
+      .get("https://dataneuronf.netlify.app/add/count")
       .then((response) => setAddCount(response.data.count))
       .catch((error) => console.error("Error fetching add count:", error));
 
     // Fetch the count of 'update' API calls
     axios
-      .get("http://localhost:8000/update/count")
+      .get("https://dataneuronf.netlify.app/update/count")
       .then((response) => setUpdateCount(response.data.count))
       .catch((error) => console.error("Error fetching update count:", error));
   }, [updateCount1]);

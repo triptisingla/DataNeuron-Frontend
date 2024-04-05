@@ -13,7 +13,7 @@ function Register({ incrementUpdateCount }) {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/v1/user/register",
+        "https://dataneuronf.netlify.app/api/v1/user/register",
         { name, email, password },
         {
           headers: {
