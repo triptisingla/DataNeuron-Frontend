@@ -46,7 +46,7 @@ function Count({ updateCountPar }) {
           </tr>
         </thead>
         <tbody>
-          {users.reverse().map((user) => (
+          {[...users].reverse().map((user) => (
             <tr key={user._id}>
               <td>{user.name}</td>
               <td>{user.email}</td>
