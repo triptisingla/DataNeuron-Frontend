@@ -33,6 +33,7 @@ function Register({ incrementUpdateCount }) {
   };
   return (
     <form className="h-full p-2">
+      <h1>REGISTER FORM</h1>
       <div className="mb-3">
         <label htmlFor="name" className="form-label">
           <b> Name </b>

@@ -33,19 +33,8 @@ function Update({ incrementUpdateCount }) {
   };
   return (
     <form className="h-full p-2">
-      <div className="mb-3">
-        <label htmlFor="nameu" className="form-label">
-          <b> Name </b>
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          id="nameu"
-          value={nameUpdate}
-          onChange={(e) => setNameUpdate(e.target.value)}
-          placeholder="John Doe"
-        />
-      </div>
+      <h1>UPDATE FORM</h1>
+
       <div className="mb-3">
         <label htmlFor="emailu" className="form-label">
           <b> Email address</b>
@@ -59,10 +48,25 @@ function Update({ incrementUpdateCount }) {
           onChange={(e) => setEmailUpdate(e.target.value)}
           placeholder="johndoe@gmail.com"
         />
+        <span className="text-primary">Please provide the email address you want to update for.</span>
+        <p className="text-danger">Email Address cannot be updated.</p>
+      </div>
+      <div className="mb-3">
+        <label htmlFor="nameu" className="form-label">
+          <b> New Name </b>
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          id="nameu"
+          value={nameUpdate}
+          onChange={(e) => setNameUpdate(e.target.value)}
+          placeholder="John Doe"
+        />
       </div>
       <div className="mb-3">
         <label htmlFor="passwordu" className="form-label">
-          <b>Password</b>
+          <b>New Password</b>
         </label>
         <input
           type="password"
