@@ -24,9 +24,9 @@ function Count({ updateCountPar }) {
         "https://dataneuron-backend-mlfa.onrender.com/api/v1/user/get"
       ); // Adjust the URL based on your setup
       console.log(response);
-      const data = await response.json();
-      console.log(data);
-      setUsers(data);
+      // const data = await response.json();
+      console.log(response.data.data);
+      setUsers(response.data.data);
     };
 
     fetchUsers();
