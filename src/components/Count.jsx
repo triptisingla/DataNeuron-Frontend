@@ -8,13 +8,13 @@ function Count({ updateCount1 }) {
   useEffect(() => {
     // Fetch the count of 'add' API calls
     axios
-      .get("https://dataneuronf.netlify.app/add/count")
+      .get("https://dataneuron-backend-mlfa.onrender.com/add/count")
       .then((response) => setAddCount(response.data.count))
       .catch((error) => console.error("Error fetching add count:", error));
 
     // Fetch the count of 'update' API calls
     axios
-      .get("https://dataneuronf.netlify.app/update/count")
+      .get("https://dataneuron-backend-mlfa.onrender.com/update/count")
       .then((response) => setUpdateCount(response.data.count))
       .catch((error) => console.error("Error fetching update count:", error));
   }, [updateCount1]);

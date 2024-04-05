@@ -13,7 +13,7 @@ function Update({ incrementUpdateCount }) {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        "https://dataneuronf.netlify.app/api/v1/user/update",
+        "https://dataneuron-backend-mlfa.onrender.com/api/v1/user/update",
         { name: nameUpdate, email: emailUpdate, password: passwordUpdate },
         {
           headers: {
